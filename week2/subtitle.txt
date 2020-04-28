@@ -1,0 +1,175 @@
+Okay guys, Discrete Optimization. This is this is a transition lecture to
+tell you about how to explore the material, and what is, you know, going
+to happen in this class, okay? So I want to tell you about how you can
+explore the rest of the material. And I want also to tell you how you can
+study, and how you can do the assignments, and, and the various
+ways you can be successful in this class, okay? So it's something where, you know, I
+basically want to give you all the options that you can have. And we have designed this class in a such
+a way that you have a lot of freedom. We are all about freedom in this class,
+okay? So first, you know, we want to
+congratulate, to congratulate you. You have made it this far. But, you know, I also want to set
+expectations, right? So this was the easy part of the class,
+right? So you got the Knapsack assignment. We gave you the algorithm. It's the easy part, okay? So what is going to come next is a
+nightmare, okay? It's going to be amazingly hard, okay? We won't give you the algorithm. We're going to give you the techniques
+that you can use, all these hats. But we won't tell you which one to use. We won't tell you how to use them. And we're going to make your life as mis,
+miserable as we can, okay? So that's the goal, okay? So essentially we give you three kinds of
+techniques that, that you can apply: constraint programming, local search, and
+mathematical programming. They are beautiful techniques, okay? So, but once again, when you get a
+problem, you will not know exactly which one to
+use, okay? And so part of this class is about you getting an
+understanding of these techniques, and finding out which ones are good for which
+problems, and which one to apply, okay? So this is essentially how the course is
+organized. It's completely open.
+We give you all kinds of freedom. So you have seen the intro of the
+material. And then, essentially, in the
+chronological organization, you know, we give you CP, and then local search, and
+then MIP. But there is no reason you need to follow that,
+okay? So you could jump from one to the other. You can start with another one. You can do all kinds of things. You can look at the introductory lecture
+for every one of these three, then go deeper in some of them, and so on
+and so forth. You have entire freedom to actually
+explore this material. It's not going to disappear, unless
+something really bad happens to Coursera, okay? But this is going to stay, and you can
+explore these things the way you want. And it is the same thing for the assignments. We are going to give you a bunch of
+assignments. And once again, there is a specific order
+which we think, you know, makes sense. But there is absolutely no obligation to
+actually do that. You can do assignments in a different
+order. Or, more, more likely, what you can do is
+start working on an assignment, having some initial
+solutions to them, and then leave them alone. Start anther assignment, and then you
+become smarter and smarter. And then you can decide oh, but no, I can
+go back to this assignment and do a better job.
+And you can do that all the time. You are graded on, you know, at the end. Not at the beginning, not when you, when,
+when the, the initial deadlines are. So you can always go back and re-find
+these things. Complete freedom, okay? You can do whatever you want, okay?
+Isn't that nice? Okay. So one thing that I want to tell you also
+is a little bit of background knowledge of
+the various optimization techniques, okay? And once again, I'm going to exaggerate. So what I'm telling you now is a real lie,
+okay? But for beginners, it's, you know, it's
+mostly true. Even for sophisticated users, to some
+extent it's true. But this is going to help you and actually
+figure out how you can get, you know, how, what are the various things
+that you can do in this class? So if you use techniques, you know, global
+techniques, techniques that are guaranteed to find the optimal solution if
+you leave them enough time, okay? Like CP, like MIP, like dynamic
+programming. What you will get is typically a method that will give very
+high quality solutions, optimal solutions in general,
+if you give them enough time. But they won't necessarily scale that well
+to huge problems, problems of very large size, or
+sizes, okay? So in a sense, this is something that, for
+a number of problems, is going to give you
+an optimal solution in this class, but for other problems is
+going to be very, very challenging to actually find optimal
+solutions using these techniques, okay? Local search is the exact opposite. It's going to basically scale very well if
+you implement it correctly, but it may not give you the best solutions all the
+time, or even a high quality solution. It depends really how you implement it,
+okay? But it's a completely orthogonal way of
+looking at the problem, okay? And of course, you know, this is one of
+the hot topics in optimization these days. Hybrid algorithm will combine these two
+things to actually give you solutions which are of very high
+quantity, for which you can actually give the quality, balance on the qualities, and things like that,
+okay? So this is like the, the Holy Grail of
+optimization these days, okay? And so, you know, you can actually do
+these three things. We don't expect you, everyone, to kind of
+do hybrid algorithms. They are very sophisticated. We'll only talk about some of them in this
+class at the end. But you can use different techniques for
+different parts of an assignment. I'm going to come back to that, okay? So keep this picture in mind when you are
+trying to solve the problems. And don't get frustrated, right? So if you try to apply a technique like this to really huge problems, you may get
+into trouble. And this is fine. We want you to get into trouble so that
+you get the intuition, okay? So there are many ways you can be
+successful in this class, and I'm going to give you some of
+them right now, okay? So there are many things you can do. Once again, it's about freedom and
+exploring many different things, okay? One of the things that you can do is to
+say, okay I'm going to use one technique, for
+instance, and apply it to everything. And of course I know that I'm going to
+sacrifice something when I do that, but you can do
+that. Or you can say no, I want to understand
+this material, you know, like crazy. And I will apply all the techniques to all
+the problems. You can do that as well, okay? And all these approaches are going to be
+successful in some fashion, right? So for instance, assume that you want to
+focus on one of the techniques, like MIP, or CP,
+okay? And you want to apply that to all the
+problems, okay? So this is like what we call a solution,
+you know, a quality based solution, okay? And what you do there is that for some of these problems, these approaches are
+not going to scale. So you won't be able to find the optimal
+solution. So when you look at the particular
+problem, okay, the particular assignment, most of these assignments will
+have about six parts, okay? And the complexity is growing. The size of the instances are growing,
+okay? So if you do a solution a method which is
+based on, on finding very good solution, optimal solution, you are
+likely going to get optimal solution to some of these
+instances, let's say four of them, where you will
+have the maximum grade. And some lower grade for, you know, the,
+the largest one, because that approach is not going to
+scale up, okay? You would get 46 points, for instance,
+okay? Now if you do local search, for instance,
+you're going to scale nicely. But you won't find the best quality
+solution. And so let's say you would get a seven for
+all these six instances. And you will get something which is like, you know, 42 points for that particular
+assignment. Both of these things, you know, 42 and 46, are sufficient for
+you to get a certificate in the class and pass
+the class, right? And so this is nice. Okay, you can do that. Of course what we want you to do, really, you know, deep heart, you know, deep
+inside your heart, is that in, you know, is basically you
+finding top solutions for every one of them,
+getting ten everywhere. But that will mean that this is a
+significant, you know, a more significant investment of
+your time. You need to actually, you know, use some of the most
+sophisticated methods on a smaller instance, and then use methods that are more scalable on the larger instances,
+okay? So these are the various ways you have to,
+you know, you can, you can try to do this
+class, okay? So you can look at the material, and try
+to get a certificate. And that means that you can explore only
+some of the techniques. So you want, really, to do really well,
+and you have to use a combination of these
+techniques, okay? So various ways you can find, you know,
+you can be successful in this class. Obviously, we encourage you to understand
+and, and master the whole material. Let me give you also some kind of feedback
+on what are the differences, from a cognitive
+standpoint in essen, essentially, for these various
+methods. They, they use different kinds of ma,
+different kinds of techniques, okay? So constraint programming is all about
+discrete, dis, discrete, you know, algorithms, discrete
+mathematics, solving puzzles. It's essentially a generalization of solving puzzles, and
+of course it's a very nice generalization. It's beautiful. But this is something, you know, if you like discrete math, discrete
+algorithm, this is, this is where, you know, this is something that's going to resonate with you very
+well, okay? Mixed integer programming is also
+beautiful, but is very different. It is based on continuous math, linear
+algebra, and things like this, okay? And, and it has its own beauty. But it's a very different way of thinking
+than, than, than, than constraint programming. So this is about, you know, pruning the
+search base. This is the goal, this is going to be about finding really clever relaxations,
+and things like that. And we'll talk about these topics in
+detail, right? So in practice, both of these things are
+very octogonal. And, and, you know, it's, it's very good
+to know about both of them. But they require very different kinds of
+backgrounds, which is nice, you know? Optimization, you get to touch on, you
+know, upon many, many topics. And then local search is this completely
+different framework, which is very intuitive, you
+know? When, when I give my kids, you know, some
+of these puzzles to solve, they will always
+do local search. They, they put things around and try to
+fix them. That's what local search is about. But it's also, it, you know, there is also
+a very systematic theory that will go, we're going to go over later on
+in the class as well, okay? So what you have to do here is, is much
+more intuitive. You can see things, you know, and, and they correspond more to your intuition, at
+least initially. But they may require a lot of programming experimentation compared to
+some of these techniques, where we'll have more support if you use, you
+know, available solvers. In all these three techniques, when you
+start looking at very complex instances, what, what you
+have to expect is that you will be spending a lot of time
+looking at your screen and wondering what these
+algorithms are doing, okay? So there is a lot of experimentation in
+optimization, okay? You may be lucky and find a really good
+solution initially. But most of the time you're going to look at this thing and say, why does this
+thing do this to me, right? So there will be a lot of these cases that
+you will experiment, okay? So but this is giving you a lot of the different backgrounds that you can
+have, okay? So, you know, select one way to proceed,
+and you can adjust it over time. You have a lot of freedom. Find the way this class works for you.
+And remember, this is a lot of work. This is a very hard class. The Knapsack assignment was the easy part
+of the class, okay? And here, you know, a lot of the focus of the class is discovering what works for
+which problems. And we don't take your hand by, you know,
+I'm not going to take your hand and, and walk you
+through the various assignments. You will have to find the best way to use
+the techniques that we are covering to actually find, you know, find good solutions to these
+assignments. Okay. Good luck.
+Thank you. It's going to be a lot of fun and a lot of
+work, okay? But a lot of fun.
+Thank you.

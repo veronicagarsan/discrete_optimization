@@ -1,0 +1,287 @@
+Discrete Optimization.
+Welcome back. This is dynamic programming, okay? So this is the first lecture where we're really going to go into some technical
+details. So what we're going to do is basically
+show you how you can get the best possible solution to the knapsack problem and we're
+going to use this first technique which is
+Dynamic programming. So in this class, what we are doing is
+giving you a lot of hats, okay? Optimization hats. And these are different techniques that
+you can use for solving optimization problems. And we will tell you, really, which one is
+good and which one is not good. Actually, we don't really know. But they will give you tools to actually
+look at these problems and try to solve them, and the first one that i'm going to talk about today is dynamic
+programming. And dynamic programming is a very widely
+used technique, okay. So when it works, it works really well and for various classes of problems it works
+very well. Particular example is computation on
+biology, a lot of the sequencing problems can be solved using dynamic programming, but
+sometimes it doesn't work at all and we'll try to give
+you intuition why okay? And, and, but this is a very useful
+technique when it works as I said, okay? So the basic principle is, is very simple.
+It's a divide and conquer approach, okay? You know, you're going to split the
+problems in different parts. But the really important thing is that it's a bottom-up computation
+technique, okay? So if you can do that in a top-down divide and conquer, in
+a top-down or bottom-up technique. Okay, and dynamic programming is about
+bottom-up. We'll see a top-down technique later on,
+also on the knapsack problem, okay? So, let's talk about dynamic programming,
+and once again I'm going to assume that the same conventions that we use when we
+talked about the modeling of the knapsack. So, we have a set of item capital I and these items are going to be denoted from 1
+to n, okay? So, these are the various item that I can pick up.
+They have a name which is 1 to n. And then I'm going to make another
+convention which is this O(k,j), okay? And O(k,j) is essentially The value of the
+optimal knapsack, if the capacity of the knapsack
+is k. And you can select item from one to j.
+Okay? So this is kind of a set problem and we're
+going to build from it, okay? The way you can formalize it is exactly
+the way I formalized the knapsack, right? But at this time only we look at the j
+Under the first j item. Okay? So, in the sense, you know, look at the
+problem here. You know, you see, you see that, you, you
+see that I'm only, I'm not using n there, I'm
+basically using j. Okay? And obviously what we are interested in is
+solving the problem where we use the full capacity of
+the knapsack, capital K, and where we use all the item, but we will be basically using this problem as,
+as a building block. So, what I'm going to do is basically com,
+be completely outrageous. I'm going to assume that I can solve all
+the sub problems for a capacity k, any capacity k and j
+minus one item. So, I have this oracle, okay? Delphi oracle that's going to tell me the
+optimal value for these two, fo, for all these things,
+okay? I'm assume that I'm basically given this,
+okay? So that's the oracle that I have. And then I can query.
+I can always ask: Ooo, what is the value for the j minus one item
+for this particular capacity. And I can query this oracle and get this
+value. Okay? So the next, usually what I want to do now
+is add one tiny little item, okay? O(k,j). So I know how to compute O O(k,j-1) for
+any value of k, and what I want to do now is compute
+O(k,j) for all the values of k as well, okay? I'm just considering one item, and you're
+going to see it's pretty simple what you have to do,
+okay? So the first thing you have to do Is to
+find out if that particular item, if you have a capacity k, if that particular item can fit inside and
+outside. If it's weight is lower down than the
+capacity k. If this is the case, then there are two other, there are two cases that you need
+to consider. The first one is, whether you are right to
+be selecting the item or not. Okay.
+If whether you are selecting the item. If you don't select the item, the value
+that you get is simply the value of the item with the same
+capacity and j minus 1 item. Okay?
+And we have the O record to compute that. That's the value that you see there. Okay? So if the item fits and we decide not to
+select it, what you get is Is basically O(k,j)
+minus 1, okay? Now, you can select the item. Okay? Because we know that it fits and in that
+particular case, what is the value that you get?
+Okay? You get obviously the value of the item
+because you put it inside the knapsack and then you get
+the value, the optimal value that you can get by using the g
+minus 1 item and the capacity which is obtained by
+removing the weight from k. Okay the weight of the item you just
+selected and as this expression that you say, that you
+see here. Is v j plus the value of a k w, you know, let me, let me start out again. It's the value of vj which is the value of the item, and then o, you know, call this
+orecorsursivly with the value of the capacity k minus the
+weight of the item, wj, and then obviously j
+minus one item. And so these are the two things that you
+can do if the item fits in the knapsack. If the item doesn't fit in the knapsack,
+what do you have? Well, you are, you are only left with the
+value of the j minus one item and the same
+capacity k. Okay? So we can build this beautiful recurrence
+relationship here, okay? Which consider the capacity k and j item
+and you basically re-express it as a maximum
+between these two value. If the act, if the item can fit inside the knapsack, and otherwise it's simply
+the same val, the, the same the, the, is basically the
+same value as you would get If you use only j minus 1 item, okay? So you have this beautiful recurrence
+relationship, finding the best case when the item can fit whether you select or you
+don't select the item. Or if the item doesn't fit you just, you
+know, end the value that you could do with the j minus 1
+item, okay? And of course you have to start from
+where, if the capacity is zero There is no item that you
+can put in the [UNKNOWN] and what I am basically
+climbing is that if you have these swings okay, you can
+compute the optimal value of the [UNKNOWN] and which item you need
+to select okay. How do you do that? Well let me show you. This is a very simple c program or Python program, you can derive the same thing in
+Python to do actually that because you know where
+computer science is just computing this Oracle for you for
+free okay? So you see basically O(k,j), okay and
+that's the function that we're defining here obviously if j is equal to zero there
+are no item okay? There is nothing you can do, therefore the
+value is zero. Otherwise you look at the item j and
+whether it fits or not in, in the knapsack, okay so you have the
+capacity k, you have w j, if it fits in the knapsack what you
+have to do the optimum value of the knapsack is going to
+be the max of this expression. Okay? And once again this consider the two cases
+that I have discussed before, and otherwise if it doesn't fit you simply come, you know, call the function
+recursively. That's the oracle, right? With one fewer item in the same capacity,
+okay? That program is actually computing the
+optimal value for the knapsack, okay? Now one question that I have for you is
+that, is this actually efficient? Okay? Can you tell me how efficient this
+algorithm is? Okay? And let me use an analogy here. This is, what I am going to show you here is a program for computing Fibonacci
+numbers and it's basically the same structure, a little bit simpler,
+than what I've shown you for the knapsack
+problem, okay? If you want to compute a value of the
+fibona, the fibonacci number of n, Okay? if n is equal to one Okay, the value is one, and otherwise if the value that you
+obtain by computing the Fibonacci of n minus one, then minus
+two and then adding that to the Fibonacci of n
+minus one Okay. That's how you can compute Fibonacci
+number, and I have the same question for you right, is this efficient or not Okay, and what
+you can see here is that okay, so if you want to compute
+when you look at this one, the value of Fibonacci n minus
+one What will you have, what, what do you have to do to actually
+compute that value, right? So you're going to compute this function
+and you're going to compute Fibonacci of n minus 2 and n minus 3, but you just have computed Fibonacci n minus 2 and for
+computing that you have computed the Fibonacci of n minus 3
+and n minus 4. So yeah, basically, we are computing many, many,
+many times the same values, okay? So this program is actually very, very,
+very inefficient, okay? You never want to use anything like that,
+okay? And why? Because in this particular case, it's
+top-down and we are not doing anything fancy. Okay? So what I'm going to do is take the
+exactly the opposite approach and we're going to do a
+bottom up computation. Okay. So we're going to start with zero item. And that's what dynamic programming does.
+Right? We start with zero item. And then, as I've shown you before we're
+going put one more item and then two more items and so on until we
+have selected all the items. Okay. So in a sense, look at this program here. This is the program that I'm going to use
+in the next couple of slides. The first thing we going to do is oh we
+going to look at what you can do with one, with
+zero item. Then one item, and then two item, and then
+three items. That's what we are trying to do here,
+okay? We are going to solve these very simple sub problems. They are very simple and then we going to
+build on top of them by adding one more item at a time,
+okay? And you going to see, it's beautiful. Okay, so this is, and so, when you think about dynamic programming, you can,
+you know, a lot of people think about tables, and I'm
+going to show you the table intuition of dynamic
+programming, okay? So you start with zero items. How much value can you get?
+If you have 0 item, okay? The value that you get is 0, right?
+So, there is nothing to take, okay? Now, we are looking at one item and assume
+that this item as a value which is 5 and a capacity which
+is 4. Until you have a capacity which exceed you
+know, which exceeds Three, which exceeds 3, then there is
+nothing you can get. You get no value.
+Right? And then, essentially, as soon as the
+capacity is 4, you can get the value of the item. So this is amazingly simple, right? So we have one item, okay? Now let's look at what happens if we have
+two items. To get a new item there, its value is 6
+and its weight is 5. Okay? And once again until you get one item that
+can fit in the knapsack you get nothing. So initially you get all these zeroes, and
+then you get to the point where the capacity is
+4. When the capacity is four you could get
+the first item. So you get a five, okay?
+When the capacity is 5 what do you get? Well you can select the second item which
+is more valuable, okay? And that's what you get there, until the point where the two items
+actually fit inside your knapsack and you get a value
+of 11. Okay, so there's the second column, okay? So two items. Now we going to build on this second
+column to actually build the case where there are three items, and this is where things start becoming more
+interesting. You can see that the weight of this guy is
+2, its value is 3, okay? So As long as we don't have at least two units of capacity, there is nothing
+you can do. Okay?
+When we have two units, we get basically, this item, the,
+the third item, 3, and this is where things really start
+getting interesting. Okay, so in this particular case When you
+have a capacity of 4, there are two items that are fitting in
+the knapsack, right? So this guy fits in the knapsack and you
+can decide to take it or not to take it. If you don't take it, what happens? Well, you get the value that you would
+have, that, that you, that you had when you select
+only the first two item.
+Okay? So, you know that you will at least get
+value five, okay? Because if you don't do anything, you
+don't select the item 3, you get the value 5. But now you have also the possibility of
+selecting this guy. If you select this guy, you get its value
+which is 3 in this particular case, but then you also have a non-empty you know, capacity for the knapsack in this
+particular case. What do we get?
+We get 1, okay? 2, 2. We get 2.
+But the value there, the value there for 2 is 0.
+Okay? So basically you get the value 3 plus 0
+which is there are 3 and therefore, it's better not to select the item and
+that's what you get at that point okay? And this is the same for the next column.
+You get 6. Okay? This is another case which is very
+interesting okay? So you're looking at the capacity of the
+knapsack which is six. Okay? And you can decide if you select the item
+or not. If you don't select the item You get the
+value which is on the left, which is 6, okay, but if you decide to select the
+item, okay. So you get the value of the item which is
+3 and then what you have is you still have a capacity of
+the knapsack which, which is you know 4, and you can fid the first
+item, which basically means in this particular case you have a value of 8
+for the particle of knapsack, okay. So this is really, really interesting
+though so essentially what you do is you have to look at two values. The value just on your left, and that's the value where you decide not
+to take the item, or the value which is in the
+previous column, but where you have removed the capacity of
+the items that you, the, the, the weight of the item that
+you get. You, you get another capacity for your
+knapsack. And now you know that you have solved that particular problem, and you can use the
+value, right? So this is what dynamic programming does. You recompute this new column, okay, based
+only on the previous column and two values in that column.
+Isn't that beautiful? Very, very simple, okay? Now, you can wonder, but, but where is the
+optimal value of the knapsack and this is their, this is
+my precious, right? 11 is the optimal size of the knapsack. I know that this value here at the bottom
+right corner is what I want. Okay? You're going to say, yeah, yeah, yeah, but
+that's the value of the optimal knapsack. What is the optimal solution?
+And I'm going to show you now how you can actually get that value of the
+optimal solution. The only thing you've to do is trace back
+for my precious until you get to the beginning of
+the table, right. So what do you do with the following? You look at the value of the way you are
+and then you look at the previous column just
+on your left. Okay? If the values are the same what do you
+know? You know that you haven't select the item,
+okay? Because the value with one fewer item is the same, okay? So you know that the decision variable for that particular, the, for that particular
+item is zero. You haven't selected that item, okay? Now you look at this value and you do the
+same thing. Okay, so is this the same as that? No it's not. That basically mean that you selected item
+two. You remove the weight of that item, you
+get another capacity that you can use for the, you know, the
+remaining items, okay? And you do the same here.
+5, is it, is it the same as 0?
+No. That basically means that you selected
+that item. And so basically, at this point, you know
+that you're selecting item one. In item two, okay, so that's the optimal
+solution. And once again the only thing that you
+have to do is take the bottom right corner and trace back inside your table and you have the optimal solution,
+okay? That's the beauty of dynamic programming,
+your computer is stable and then you trace back and you get the
+optimum value, okay? Now let me show you a more complex
+example, okay? This is a more complex example, okay? It has four variables and the numbers are
+a little bit bigger. We want to make your life little bit more
+miserable. Okay? That's what we do in this class. And so what you see is you see the table
+now. It has four entries. It has a bunch of capacity as well. Okay?
+And now what you can do, okay? You just stop this video and then you
+start filling this beautiful table on your screen.
+Actually don't do that, right? So, don't do that. Okay, just you know, just print the
+lecture. Okay?
+So, I'm going to do the work for you. Okay? This is the complete You know, the, the
+complete values for all these tables and they are
+entirely correct. Okay? You can trust us on that. And then you see this bottom right corner,
+right? That's my precious. That's what the val, the optimum value of
+the knapsack and then that's what I can use to trace back the
+value of the optimal solution. Look at this guy. Okay?
+It has value of 44. Is it equal to 42?
+No? So you know that you selected item four.
+Okay? So you decrease the capacity by the weight
+of that particular item. You get to this position. You see, oh, is it the same.
+yes, it's the same. yes, it's the same.
+Oh, it's not the same. So you know that you selected item one. So the optimal solution here is selecting
+item one and item four. Okay? So, and, the value of your decision
+variables are exactly that, right? So you see that x1 is equal one, the next
+two are equal to zero, and x4 is equal to one,
+okay? So this dynamic programming algorithm here
+is basically computing All the value okay? Of your decision variables and satisfying
+the capacity constraint .Okay? Now an, an interesting question for you is
+how long does this algorithm take? Well, it's pretty easy, right?
+So the only thing that we are really doing is filling this
+table. Okay? And to fill any one of the entries in this
+table, the only thing that you do is looking at two values
+On the prior column, okay? So it's basically an algorithm which takes
+the time that it takes is you know, as
+scientifically, k times, the k times n, where k, capital K is size of knapsack and n is the number of items,
+okay. Now you're going to see wow, this is
+really interesting, we just saw p equals lp, this algorithm is
+polynomial, right? Right? So are we going to get a Nobel prize?
+No, not really, right. So why? Because on a computer this capital K
+there, okay, can be uncoded using binary notation by log of K,
+capital K bit. Okay? And because of that when you look at this
+complexity it's actually exponential in the size. Of, of the input because I can co, encode
+this in, input with log k bits. Okay? So this is of use the exponential in that
+number. Okay? So, so what do we have here? Well, we have an algorithm which is called
+pseudo-polynomial. That basically means that if these numbers
+are small this algorithm is polynomial. It works very well when the numbers are
+small, okay? So every time you know you've, you've
+essentially an knapsack whose capacity is reasonably small this is a very very
+efficient algorithm. If the capacity starts getting huge and
+huge and huge and you have a lot of items, you know, you're are going
+to get into some, some issues. And can you guess what the issues are?
+Okay? Remember, what we are computing was, is
+this table okay? This capital K is huge. This table is going to get bigger and
+bigger and bigger and bigger, okay, and that's one of the problems that
+you have with dynamic programming. Okay guys, so this is the first hat, okay? Now I wanted to present to you, this is
+dynamic programming, okay? So you saw we can compute oh, you know, of human solutions to doing abstract
+problem with dynamic programming. In the next lecture, we'll see another
+technique which is essentially solving. This, this, you know, recursive equation
+using a top down approach. Okay? See you next time, guys, thank you.

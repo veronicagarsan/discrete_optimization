@@ -1,0 +1,115 @@
+Okay, guys, discrete optimization,
+knapsack algorithm. We're going to look at greedy algorithm
+again, okay, and this time in more detail. The key point here is that what we want to
+do is that something that can give you
+solutions very quickly, okay? And that's going to give you a baseline on everything that you will do afterwards,
+okay? So you can start with this, and then can
+look at how to improve it later on, okay? So, even greedy algorithm is an
+interesting topic, okay? Designing them may be very complex on some
+problems and they may vary in qualities. So, what I'm going to do today is
+basically illustrate various kinds of greedy
+approach on the knapsack problem and, you know, in a sense give you
+the intuition of how you can design them. And you can be creative on these guys, as
+well. Okay? So, the key idea on all the greedy
+algorithms is going to be the same. You're going to pick one item at a time in
+a greedy fashion. And the only thing that's going to differ
+is the meaning of greedy in every one of these algorithms.
+Okay? So we call them greedy algorithms or
+heuristic. And you will see why later on. I will tell you why we call them this.
+Okay? So, once again, think about the temple is
+collapsing. We saw that in the previous lecture.
+You know the various item that you have. You know the value that each of them has. You also know the weight of them, and obviously you know the capacity of your
+knapsack. Okay? So, which item do we start taking? Okay? That's the basic idea, that's what we're
+trying to do. And, let's, let's, this is the first thing
+that you can say, okay? So, I'm going to take very small things
+because I believe that I can pack many of them, and then I'm going to give
+you a good value at the end. Okay this is the first idea. You look at the item, you sort them essentially by weight and you start
+packing them, okay? So what you see there, you see the small weights at the beginning, higher
+weights until the very heavy mask over there. And so you start picking these, these,
+these various item. Essentially until you exceed the capacity
+of your knapsack. At this point essentially, you can't pack
+any more item, so you're fixed with what you've selected so far,
+and you get a particular value. In this particular case, 10 million. That's one greedy algorithm and the
+greediness here was selecting the smaller item first and you put them in until there is no
+space on the knapsack, okay? Very simple greedy algorithm. We saw another one, okay, during the
+previous lecture. And that was selecting the most valuable
+item first, okay? So, to re-, to, to remind you of what we
+did. We sorted the item by value, okay? Starting with the mask, and so on and so
+forth, okay? And then you pick the highest value item. And then immediately, there are items that
+you cannot put inside the knapsack at this point, because
+they are too big. And then we take some of these warriors, okay. In this particular case one of them, to
+actually get the value of the knapsack, in this particular case,
+which is about, which is 14 millions here. Better solution in this particular case,
+the greediness what, what's different here is not the smallest item, it was the
+most valuable item. That's the second idea of a greedy
+algorithm. Okay, in this particularly this one was
+better, you know, I can easily design a case where the first
+one would be better. Now can we do better than these two. Okay, I'm going to show you an interesting
+idea here because we're going to start focusing on the
+structure of the problem. Okay, and you've seen in this class,
+structure is going to come back all the time. Okay, exploring the structure of the
+problem. So, when you look at this thing, one of
+the things you can do is that, okay, so most valuable
+item is interesting, but this may be very, very, very heavy, and the
+smaller one may have, you know, they may be tiny, tiny, tiny but
+they have no value. Okay? What you want to do is really find
+something which is called value density. Okay, how much value do you have per kilo that you will have to lift and, and
+transport, okay. So look at all these items. We know the value, you know the weight,
+you can divide these two things and you get a
+sense on how, you know, what is the value of one
+kilo of this warrior, of one kilo of this mask,
+okay. And now you see that you can sort them by
+that, by, by that order and this becomes the most valuable and then
+you see the ordering has changed completely and now you start packing them inside this new ordering,
+okay. So you, you, you put this, this particular
+artifact first. And as soon as you do that, you can't
+select the mask anymore. And then you put the tablet and you get
+eight kilo. So you still have some room to actually
+put a particular warrior there. And you get a value which is 18 millions,
+okay? So here we're exploiting the structure. We really look at the, the, the value per
+weight, per weight unit and we got a better solution
+in this particular case. Okay? Now you may ask, is this the best we can
+do? Is this optimal? Is there any way I can improve? And obviously, this class is going to be all about, you know, improving on the
+greedy algorithm. And in this particular case, there is a
+very simple solution which does better. You select these two tablets and you get a
+value which is 20 million, okay. We still don't know if it's optimal,
+right, you know, but in this particular case we can
+actually prove this. So, in a sense, the main messages today is
+to show you that in practice there are many different
+greedy algorithms that you can build. You have to think, you know, creatively. What is the best greedy algorithms that I
+could get? And some will be better than others in
+different kinds of instances, okay, so, and, and so you may actually use several
+of them at the same time. The advantage of this is that they are
+very easy to use, very easy to design, okay, they
+can be very, very fast, they give you a first solution,
+they tell you, okay, you know, now I understand
+something about this problems. I know that this is at least a baseline, and I have to start doing better than
+this. They have a lot of issues obviously, okay? So, there is no solution guarantees in
+general. You don't know much you can improve them,
+you don't know how good they are. the, the quality of these heuristics may
+value from problems to problem, from instances to
+instances, and so on. And one of the things that I have assumed here is that you can build the solution
+easily. Finding a feasible solution is not an
+issue. And there are many problems in practice
+where just finding a feasible solution is very
+very difficult. So, you will have to, to do something else than a greedy algorithm in that
+particular case. Or you will have to change the notion of
+what a solution is. So, but these are some issues that we'll
+have to deal with once again and these issues, the, the most advanced techniques
+that we will present in this class, we'll address
+those. So, one of the things that you should do
+in this class is, when you start on a problem, okay, what we highly
+recommend is that you start with a greedy algorithm. Try to understand what the problem is. Get a base line, that's what you have to
+improve and than afterwards you going to use some of the
+techniques that we will present, you know, constraint programming, mixed integer programming, local search, to
+actually improve on the greedy and find out how
+much you can improve. And once again, some of these techniques
+are also going to give you a way to assess the value of the greedy algorithm, or any
+solution that you can come up with, okay? So this is essentially the main message. I'll see you next time, okay? And what we going to do in the rest of
+the, of, of, of the, the knapsack lecture is show you how you can find, reliably,
+the reliability feasible solution. How you can build high quality solution
+which are robust across a wide range of impact. And also give you a way to actually find
+out if these solutions are optimal or not, how
+good there are. Okay? This is essentially, the, the most
+advanced techniques are allowing you to do these things that a greedy
+algorithm cannot, okay? See you next time, thank you guys. [BLANK_AUDIO]
